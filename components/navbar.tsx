@@ -1,31 +1,32 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ModeToggle } from "@/components/mode-toggle"
-import { ContactPopover } from "@/components/contact-popover"
-import { Menu, X } from "lucide-react"
-import { motion } from "framer-motion"
+import { ContactPopover } from "@/components/contact-popover";
+import { ModeToggle } from "@/components/mode-toggle";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 
 const navItems = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
-  { name: "Services", href: "#services" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
+  { name: "Services", href: "#services" },
   { name: "Contact", href: "#contact" },
-]
+];
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   const scrollToContact = () => {
-    const element = document.querySelector("#contact")
+    const element = document.querySelector("#contact");
     if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" })
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-  }
+  };
 
   return (
     <motion.nav
@@ -37,7 +38,12 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="#home" className="text-2xl font-bold">
-            EKJ
+            <Image
+              src={"/emamjion-logo.png"}
+              alt="logo"
+              width={80}
+              height={80}
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -65,8 +71,16 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-2">
             <ModeToggle />
-            <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)}>
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </Button>
           </div>
         </div>
@@ -99,5 +113,5 @@ export default function Navbar() {
         )}
       </div>
     </motion.nav>
-  )
+  );
 }
