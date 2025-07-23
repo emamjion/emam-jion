@@ -1,25 +1,25 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Download, ArrowRight } from "lucide-react"
-import Image from "next/image"
-import { motion } from "framer-motion"
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { ArrowRight, Download } from "lucide-react";
+import Image from "next/image";
 
 export default function Hero() {
   const scrollToContact = () => {
-    const element = document.querySelector("#contact")
+    const element = document.querySelector("#contact");
     if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" })
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-  }
+  };
 
   const downloadCV = () => {
     // Create a link to download CV from public folder
-    const link = document.createElement("a")
-    link.href = "/cv.pdf" // Make sure to add your CV to public folder
-    link.download = "Emam_Khalid_Jion_CV.pdf"
-    link.click()
-  }
+    const link = document.createElement("a");
+    link.href = "/cv.pdf"; // Make sure to add your CV to public folder
+    link.download = "Emam_Khalid_Jion_CV.pdf";
+    link.click();
+  };
 
   return (
     <section id="home" className="min-h-screen flex items-center py-20">
@@ -47,8 +47,9 @@ export default function Hero() {
               transition={{ delay: 0.4 }}
               className="text-xl text-muted-foreground max-w-lg"
             >
-              Full Stack Developer passionate about creating amazing web experiences with modern technologies like
-              React, Next.js, and Node.js.
+              Full Stack Developer passionate about creating amazing web
+              experiences with modern technologies like React, Next.js, and
+              Node.js.
             </motion.p>
 
             <motion.div
@@ -89,7 +90,7 @@ export default function Hero() {
                 className="relative z-10"
               >
                 <Image
-                  src="/placeholder.svg?height=400&width=400"
+                  src="/emam-cover.png?height=400&width=400"
                   alt="Emam Khalid Jion"
                   width={400}
                   height={400}
@@ -100,7 +101,11 @@ export default function Hero() {
               {/* Animated border effect */}
               <motion.div
                 animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+                transition={{
+                  duration: 20,
+                  repeat: Number.POSITIVE_INFINITY,
+                  ease: "linear",
+                }}
                 className="absolute inset-0 rounded-full border-2 border-dashed border-primary/30"
               />
             </div>
@@ -108,5 +113,5 @@ export default function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }

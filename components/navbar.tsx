@@ -1,6 +1,6 @@
 "use client";
 
-import { ContactPopover } from "@/components/contact-popover";
+import { ContactDialog } from "@/components/contact-dialog";
 import { ModeToggle } from "@/components/mode-toggle";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
@@ -65,7 +65,7 @@ export default function Navbar() {
             <Button onClick={scrollToContact} variant="outline">
               Hire Me
             </Button>
-            <ContactPopover />
+            <ContactDialog />
           </div>
 
           {/* Mobile Menu Button */}
@@ -107,7 +107,7 @@ export default function Navbar() {
               <Button onClick={scrollToContact} variant="outline" size="sm">
                 Hire Me
               </Button>
-              <ContactPopover />
+              <ContactDialog />
             </div>
           </motion.div>
         )}
