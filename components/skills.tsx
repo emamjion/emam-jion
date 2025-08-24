@@ -1,38 +1,57 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Card, CardContent } from "@/components/ui/card"
-import { Code, Database, Globe, Smartphone, Server, Palette, FileCode, Layers, GitBranch, Zap } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import { Globe } from "lucide-react";
+import { BiLogoPostgresql } from "react-icons/bi";
+import {
+  FaCss3Alt,
+  FaDocker,
+  FaGit,
+  FaHtml5,
+  FaJs,
+  FaNodeJs,
+  FaReact,
+} from "react-icons/fa";
+import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
+import { SiExpress, SiGraphql, SiMongodb, SiTypescript } from "react-icons/si";
+import { TbBrandFramerMotion } from "react-icons/tb";
 
 export default function Skills() {
   const frontendSkills = [
-    { name: "React.js", icon: Code },
-    { name: "Next.js", icon: Globe },
-    { name: "TypeScript", icon: FileCode },
-    { name: "Tailwind CSS", icon: Palette },
-    { name: "Framer Motion", icon: Smartphone },
-    { name: "JavaScript", icon: Code },
-    { name: "HTML5", icon: Layers },
-    { name: "CSS3", icon: Palette },
-  ]
+    { name: "React.js", icon: FaReact },
+    { name: "Next.js", icon: RiNextjsFill },
+    { name: "TypeScript", icon: SiTypescript },
+    { name: "Tailwind CSS", icon: RiTailwindCssFill },
+    { name: "Framer Motion", icon: TbBrandFramerMotion },
+    { name: "JavaScript", icon: FaJs },
+    { name: "HTML5", icon: FaHtml5 },
+    { name: "CSS3", icon: FaCss3Alt },
+  ];
 
   const backendSkills = [
-    { name: "Node.js", icon: Server },
-    { name: "Express.js", icon: Server },
-    { name: "MongoDB", icon: Database },
-    { name: "PostgreSQL", icon: Database },
+    { name: "Node.js", icon: FaNodeJs },
+    { name: "Express.js", icon: SiExpress },
+    { name: "MongoDB", icon: SiMongodb },
+    { name: "PostgreSQL", icon: BiLogoPostgresql },
     { name: "REST APIs", icon: Globe },
-    { name: "GraphQL", icon: Zap },
-    { name: "Git", icon: GitBranch },
-    { name: "Docker", icon: Layers },
-  ]
+    { name: "GraphQL", icon: SiGraphql },
+    { name: "Git", icon: FaGit },
+    { name: "Docker", icon: FaDocker },
+  ];
 
-  const SkillCard = ({ skills, title }: { skills: typeof frontendSkills; title: string }) => (
+  const SkillCard = ({
+    skills,
+    title,
+  }: {
+    skills: typeof frontendSkills;
+    title: string;
+  }) => (
     <div className="space-y-6">
-      <h3 className="text-2xl font-bold text-center">{title}</h3>
+      <h3 className="text-xl font-semibold text-center">{title}</h3>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {skills.map((skill, index) => {
-          const Icon = skill.icon
+          const Icon = skill.icon;
           return (
             <motion.div
               key={skill.name}
@@ -47,15 +66,17 @@ export default function Skills() {
                   <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary/20 transition-colors">
                     <Icon className="h-8 w-8 text-primary" />
                   </div>
-                  <span className="font-medium text-center text-sm">{skill.name}</span>
+                  <span className="font-medium text-center text-sm">
+                    {skill.name}
+                  </span>
                 </CardContent>
               </Card>
             </motion.div>
-          )
+          );
         })}
       </div>
     </div>
-  )
+  );
 
   return (
     <section id="skills" className="py-20">
@@ -69,11 +90,12 @@ export default function Skills() {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">My Skills</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Here are the technologies and tools I work with to bring ideas to life
+            Here are the technologies and tools I work with to bring ideas to
+            life
           </p>
         </motion.div>
 
-        <div className="space-y-16">
+        <div className="flex items-center gap-6">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -94,5 +116,5 @@ export default function Skills() {
         </div>
       </div>
     </section>
-  )
+  );
 }
