@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Link as ScrollLink } from "react-scroll";
 import { TypeAnimation } from "react-type-animation";
 
@@ -31,13 +32,30 @@ const Hero = () => {
               className="ml-2 xl:ml-4"
             />
           </h1>
-          <p className="lead">
+          <p className="lead max-w-[476px] mb-7">
             Delivering custom websites that captivate with design and impress
             with performance.
           </p>
           <ScrollLink to="contact" smooth>
             <button className="btn btn-accent mb-8">Contact me</button>
           </ScrollLink>
+
+          {/* Stats */}
+          <div>Stata</div>
+        </div>
+
+        {/* image */}
+        <div className="hidden xl:flex w-[55vw] h-[800px] absolute top-0 right-0 bg-accent">
+          <div className="absolute w-[558px] h-[642px] bottom-0 z-40">
+            <Image
+              src={"/assets/hero.webp"}
+              alt="hero image"
+              priority
+              fill
+              quality="100"
+              className="object-contain"
+            />
+          </div>
         </div>
       </div>
     </section>
