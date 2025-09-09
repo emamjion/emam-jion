@@ -2,9 +2,10 @@ import Hero from "@/components/Hero";
 
 const Homepage = () => {
   return (
-    <div>
+    <>
+      {/* Hero section */}
       <Hero />
-    </div>
+    </>
   );
 };
 
