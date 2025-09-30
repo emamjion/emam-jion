@@ -3,12 +3,13 @@
 import Image from "next/image";
 import { Link as ScrollLink } from "react-scroll";
 import { TypeAnimation } from "react-type-animation";
+import Header from "./Header";
 
 const Hero = () => {
   return (
     <section className="h-[800px] relative bg-accent/10 xl:bg-white">
       {/* Header */}
-      <header>Header</header>
+      <Header />
 
       {/* Content */}
       <div className="container mx-auto h-full">
@@ -41,7 +42,7 @@ const Hero = () => {
           </ScrollLink>
 
           {/* Stats */}
-          <div>Stata</div>
+          <div>Stats</div>
         </div>
 
         {/* image */}

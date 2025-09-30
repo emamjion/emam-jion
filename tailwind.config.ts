@@ -23,11 +23,14 @@ const config: Config = {
     },
     extend: {
       colors: {
+        // primary: "#10151f",
         primary: "#10151f",
         secondary: "#475467",
         accent: {
-          DEFAULT: "#0D1164",
-          hover: "#1A2A80",
+        //   DEFAULT: "#0D1164",
+          DEFAULT: "#10B981",
+        //   hover: "#1A2A80",
+          hover: "#10B199",
         },
       },
       boxShadow: {
