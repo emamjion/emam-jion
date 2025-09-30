@@ -20,7 +20,10 @@ const Header = () => {
               linkStyles="text-primary font-primary text-lg tracking-[1.4px] transition-all duration-300 cursor-pointer"
               spy=""
             />
-            <Socials containerStyles="" iconStyles="" />
+            <Socials
+              containerStyles="flex items-center gap-2"
+              iconStyles="text-base w-[32px] h-[32px] bg-primary hover:scale-110 transition-all duration-300 text-white flex items-center justify-center rounded-full"
+            />
           </div>
         </div>
       </div>
