@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
 import { TypeAnimation } from "react-type-animation";
 import Header from "./Header";
@@ -37,9 +38,21 @@ const Hero = () => {
             Delivering custom websites that captivate with design and impress
             with performance.
           </p>
-          <ScrollLink to="contact" smooth>
-            <button className="btn btn-accent mb-8">Contact me</button>
-          </ScrollLink>
+          <div className="mb-8 flex items-center gap-3">
+            <ScrollLink to="contact" smooth>
+              <button className="btn btn-accent">Contact me</button>
+            </ScrollLink>
+            <Link
+              target="_blank"
+              href={
+                "https://drive.google.com/file/d/19l2nHSp0j91Zud2JmI6UEW3fgY_KcQmu/view?usp=drive_link"
+              }
+            >
+              <button className="btn border border-accent hover:bg-accent hover:text-white">
+                Download CV
+              </button>
+            </Link>
+          </div>
 
           {/* Stats */}
           <div>Stats</div>
