@@ -31,7 +31,7 @@ const Hero = () => {
               speed={50}
               wrapper="span"
               cursor={false}
-              className="ml-2 xl:ml-4"
+              className="ml-2 xl:ml-4 text-primary"
             />
           </h1>
           <p className="lead max-w-[476px] mb-7">

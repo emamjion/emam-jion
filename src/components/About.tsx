@@ -1,7 +1,7 @@
 const About = () => {
   return (
-    <section>
-      <h1>About section</h1>
+    <section className="bg-yellow-200 py-96" id="about">
+      About
     </section>
   );
 };
