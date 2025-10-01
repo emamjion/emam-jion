@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
 import { TypeAnimation } from "react-type-animation";
 import Header from "./Header";
+import Stats from "./Stats/Stats";
 
 const Hero = () => {
   return (
@@ -55,7 +56,7 @@ const Hero = () => {
           </div>
 
           {/* Stats */}
-          <div>Stats</div>
+          <Stats />
         </div>
 
         {/* image */}

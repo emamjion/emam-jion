@@ -2,9 +2,10 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { CgMenuGridR } from "react-icons/cg";
+import { FiMail, FiMapPin, FiPhoneCall } from "react-icons/fi";
 import { useMediaQuery } from "react-responsive";
 import Nav from "./Nav";
-// import { FiMapPin, FiPhoneCall, FiMail } from "react-icons/fi";
+import Socials from "./Socials";
 
 const FixedMenu = () => {
   const [showMenuButton, setShowMenuButton] = useState(false);
@@ -53,7 +54,51 @@ const FixedMenu = () => {
                 spy={true}
               />
               {/* info */}
-              <div className="hidden md:flex">Info</div>
+              <div className="hidden md:flex mx-auto">
+                <div>
+                  {/* Contact Info */}
+                  <div className="flex gap-12 mb-12">
+                    {/* Location */}
+                    <div className="flex flex-col">
+                      <div className="text-[28px] text-accent mb-2">
+                        <FiMapPin />
+                      </div>
+                      <p className="font-semibold text-lg text-primary">
+                        Location
+                      </p>
+                      <p>Dhaka, Bangladesh</p>
+                    </div>
+
+                    {/* Phone */}
+                    <div className="flex flex-col">
+                      <div className="text-[28px] text-accent mb-2">
+                        <FiPhoneCall />
+                      </div>
+                      <p className="font-semibold text-lg text-primary">
+                        Phone
+                      </p>
+                      <p>+880 172 708 7717</p>
+                    </div>
+
+                    {/* Email */}
+                    <div className="flex flex-col">
+                      <div className="text-[28px] text-accent mb-2">
+                        <FiMail />
+                      </div>
+                      <p className="font-semibold text-lg text-primary">
+                        Email
+                      </p>
+                      <p>emamjion@gmail.com</p>
+                    </div>
+                  </div>
+
+                  {/* Socials */}
+                  <Socials
+                    containerStyles="flex gap-2"
+                    iconStyles="text-[20px] w-[32px] h-[32px] text-primary flex items-center justify-center rounded-full"
+                  />
+                </div>
+              </div>
             </div>
           </motion.div>
         )}
