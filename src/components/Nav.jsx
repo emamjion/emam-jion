@@ -1,4 +1,5 @@
 "use client";
+
 import { Link as ScrollLink } from "react-scroll";
 
 const Links = [
@@ -28,9 +29,10 @@ const Nav = ({ containerStyles, linkStyles, listStyles, spy }) => {
             key={index}
             activeClass="active"
             to={link.name}
-            smooth
+            smooth={true}
             className={linkStyles}
             spy={spy}
+            offset={-100}
           >
             {link.name}
           </ScrollLink>

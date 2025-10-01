@@ -48,9 +48,9 @@ const FixedMenu = () => {
             <div className="bg-white shadow-custom w-full h-full max-w-[1170px] mx-auto py-12 xl:py-12 px-12 xl:px-32 flex items-center gap-12">
               <Nav
                 containerStyles="md:border-r border-secondary/20 md:pr-12 w-full md:w-auto text-center md:text-left"
-                linkStyles=""
-                listStyles=""
-                spy=""
+                listStyles="flex flex-col justify-center gap-4"
+                linkStyles="font-primary text-primary text-4xl cursor-pointer"
+                spy={true}
               />
               {/* info */}
               <div className="hidden md:flex">Info</div>
