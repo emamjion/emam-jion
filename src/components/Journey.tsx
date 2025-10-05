@@ -1,6 +1,6 @@
 const Journey = () => {
   return (
-    <section className="bg-purple-200 py-96" id="journey">
+    <section className="" id="journey">
       Journey
     </section>
   );
