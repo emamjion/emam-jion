@@ -1,6 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
 
+// type
+type TAnimatedTextProps = {
+  text: string;
+  textStyles?: string;
+};
+
 const letterAnimation = {
   initial: {
     y: "100%",
@@ -33,10 +39,11 @@ const getLetter = (name: string) => {
       </motion.span>
     );
   });
+  return letters;
 };
 
-const AnimatedText = () => {
-  return <div>Animated Text</div>;
+const AnimatedText = ({ text, textStyles }: TAnimatedTextProps) => {
+  return <div className={`${textStyles}`}>{getLetter(text)}</div>;
 };
 
 export default AnimatedText;
