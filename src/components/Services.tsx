@@ -21,7 +21,7 @@ const services: TService[] = [
   },
   {
     icon: <FaShoppingCart />,
-    title: "E-commerce Solution",
+    title: "App Development",
     description: "Building secure, user-friendly online stores to drive sales.",
   },
   {
