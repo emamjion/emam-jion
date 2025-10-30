@@ -50,7 +50,7 @@ const Hero = () => {
               }
             >
               <button className="btn border border-accent hover:bg-accent hover:text-white">
-                Download CV
+                Hire me
               </button>
             </Link>
           </div>
@@ -63,7 +63,7 @@ const Hero = () => {
         <div className="hidden xl:flex w-[55vw] h-[800px] absolute top-0 right-0 bg-accent">
           <div className="absolute w-[558px] h-[642px] bottom-0 z-40">
             <Image
-              src={"/assets/hero.webp"}
+              src={"/assets/emamjion.png"}
               alt="hero image"
               priority
               fill

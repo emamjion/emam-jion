@@ -8,7 +8,7 @@ export type TStatsDataProps = {
 
 const statsData: TStatsDataProps[] = [
   {
-    endCountNum: 2,
+    endCountNum: 1,
     endCountText: "+",
     text: "Yrs. of Experience",
   },
