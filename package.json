@@ -9,9 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-tabs": "^1.1.13",
     "@types/react-scroll": "^1.8.10",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "framer-motion": "^12.23.12",
     "locomotive-scroll": "^5.0.0-beta.21",
+    "lucide-react": "^0.562.0",
     "next": "14.0.3",
     "react": "^18",
     "react-countup": "^6.5.3",
@@ -20,7 +24,9 @@
     "react-responsive": "^10.0.1",
     "react-scroll": "^1.9.3",
     "react-type-animation": "^3.2.0",
-    "swiper": "^11.2.10"
+    "swiper": "^11.2.10",
+    "tailwind-merge": "^3.4.0",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@types/node": "^20",
