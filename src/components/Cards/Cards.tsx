@@ -38,7 +38,7 @@ const journey = [
         type : 'education',
         institution : 'Programming Hero',
         logoUrl : '',
-        position : 'Web Development Bootcamp',
+        qualification : 'Web Development Bootcamp',
         duration : 'Dec 2022 - Aug 2023',
         descriptoin : 'Learned MERN stack developement concepts, focusing on React, Node.js, MongoDB, Express.js and APIs. Completed hands-on projects to solidify skills.'
     },
@@ -46,7 +46,7 @@ const journey = [
         type : 'education',
         institution : 'Programming Hero',
         logoUrl : '',
-        position : 'Advanced Web Development - Full Stack',
+        qualification : 'Advanced Web Development - Full Stack',
         duration : 'Oct 2023 - May 2024',
         descriptoin : 'Gained experience in frontend and backend technologies, including Nextjs, Nodejs, TypeScript and databases.'
     },
