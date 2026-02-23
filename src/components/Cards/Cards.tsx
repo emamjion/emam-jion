@@ -46,7 +46,7 @@ const journey = [
         type : 'education',
         institution : 'Programming Hero',
         logoUrl : '',
-        qualification : 'Advanced Web Development - Full Stack',
+        qualification : 'Advanced Web Development - MERN Stack',
         duration : 'Oct 2023 - May 2024',
         descriptoin : 'Gained experience in frontend and backend technologies, including Nextjs, Nodejs, TypeScript and databases.'
     },
@@ -55,9 +55,27 @@ const journey = [
         institution : 'Programming Hero',
         logoUrl : '',
         position : 'Advanced Web Development - Full Stack',
+        duration : 'July 2024 - May 2025',
+        descriptoin : 'Gained experience in Full stack technologies, including Nextjs, Nodejs, TypeScript and databases.'
+    },
+     {
+        type : 'education',
+        institution : 'Programming Hero',
+        logoUrl : '',
+        qualification : 'Advanced Web Development - MERN Stack',
         duration : 'Oct 2023 - May 2024',
         descriptoin : 'Gained experience in frontend and backend technologies, including Nextjs, Nodejs, TypeScript and databases.'
     },
+    // Skills
+    {
+        type : 'skill',
+        name : 'HTML5',
+        icon : <FaHtml5/>,
+        
+        duration : 'Learn in 2023',
+        descriptoin : 'Crafted structured web content using HTML effectively.'
+    },
+
 ]
 
 

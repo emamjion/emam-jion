@@ -60,7 +60,7 @@ const Hero = () => {
         </div>
 
         {/* image */}
-        <div className="hidden xl:flex w-[55vw] h-[800px] absolute top-0 right-0 bg-accent">
+        <div className="hidden xl:flex w-[55vw] h-[800px] absolute top-0 right-0 bg-white">
           <div className="absolute w-[558px] h-[642px] bottom-0 z-40">
             <Image
               src={"/assets/emamjion.png"}
