@@ -11,7 +11,19 @@ import {
   ServerCog,
   Smartphone,
 } from "lucide-react";
+
+
+
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa6";
+import {
+  SiMongodb,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiReact,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
+import { Experience } from "@/types";
 
 export const services = [
   {
@@ -161,5 +173,119 @@ export const socialLinks = [
     name: "Facebook",
     icon: FaFacebook,
     href: "#",
+  },
+];
+
+export const experiences: Experience[] = [
+  {
+    id: "01",
+    company: "Sanjin Tech",
+    role: "Full Stack Developer",
+    type: "Full-time",
+    period: "2024 — Present",
+    location: "Dhaka, Bangladesh",
+    description:
+      "Building modern digital products and scalable web applications with a strong focus on clean architecture, thoughtful UX, and reliable performance.",
+    achievements: [
+      "Developing scalable full-stack web applications",
+      "Designing responsive and user-focused interfaces",
+      "Building REST APIs and backend architectures",
+      "Working with modern frontend and backend technologies",
+    ],
+    technologies: [
+      {
+        name: "Next.js",
+        icon: SiNextdotjs,
+      },
+      {
+        name: "React",
+        icon: SiReact,
+      },
+      {
+        name: "TypeScript",
+        icon: SiTypescript,
+      },
+      {
+        name: "Node.js",
+        icon: SiNodedotjs,
+      },
+      {
+        name: "MongoDB",
+        icon: SiMongodb,
+      },
+      {
+        name: "Tailwind",
+        icon: SiTailwindcss,
+      },
+    ],
+    current: true,
+  },
+  {
+    id: "02",
+    company: "Freelance",
+    role: "Full Stack Developer",
+    type: "Freelance",
+    period: "2022 — 2024",
+    location: "Remote",
+    description:
+      "Worked with businesses and individuals to transform ideas into functional, responsive, and production-ready digital experiences.",
+    achievements: [
+      "Delivered custom websites and web applications",
+      "Developed e-commerce and business platforms",
+      "Created reusable UI components and design systems",
+      "Integrated APIs, databases, and third-party services",
+    ],
+    technologies: [
+      {
+        name: "React",
+        icon: SiReact,
+      },
+      {
+        name: "Next.js",
+        icon: SiNextdotjs,
+      },
+      {
+        name: "Node.js",
+        icon: SiNodedotjs,
+      },
+      {
+        name: "MongoDB",
+        icon: SiMongodb,
+      },
+      {
+        name: "TypeScript",
+        icon: SiTypescript,
+      },
+    ],
+  },
+  {
+    id: "03",
+    company: "Independent Projects",
+    role: "Frontend Developer",
+    type: "Project-based",
+    period: "2021 — 2022",
+    location: "Remote",
+    description:
+      "Focused on creating polished frontend experiences and turning product ideas into responsive, interactive interfaces.",
+    achievements: [
+      "Built responsive frontend interfaces",
+      "Created reusable React components",
+      "Implemented modern animations and interactions",
+      "Worked closely with design and product requirements",
+    ],
+    technologies: [
+      {
+        name: "React",
+        icon: SiReact,
+      },
+      {
+        name: "TypeScript",
+        icon: SiTypescript,
+      },
+      {
+        name: "Tailwind",
+        icon: SiTailwindcss,
+      },
+    ],
   },
 ];
