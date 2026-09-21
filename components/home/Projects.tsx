@@ -13,179 +13,9 @@ import {
 } from "lucide-react";
 import { useMemo, useState } from "react";
 
-import {
-  SiExpress,
-  SiFigma,
-  SiMongodb,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiPostgresql,
-  SiReact,
-  SiTailwindcss,
-  SiTypescript,
-} from "react-icons/si";
-
+import { projects } from "@/data";
+import { ProjectCategory } from "@/types";
 import { FaGithub } from "react-icons/fa";
-
-type ProjectCategory = "Frontend" | "Backend" | "Full Stack" | "UI/UX Design";
-
-type Technology = {
-  name: string;
-  icon: React.ElementType;
-};
-
-type Project = {
-  id: string;
-  title: string;
-  category: string;
-  categories: ProjectCategory[];
-  description: string;
-  image: string;
-  featured?: boolean;
-  technologies: Technology[];
-  liveUrl: string;
-  githubUrl: string;
-};
-
-const projects: Project[] = [
-  {
-    id: "01",
-    title: "Real Estate Platform",
-    category: "Full Stack Web Application",
-    categories: ["Full Stack", "Frontend", "Backend"],
-    description:
-      "A modern real estate platform with property discovery, advanced filtering, detailed property pages and a smooth user experience.",
-    image: "/images/projects/real-estate.jpg",
-    featured: true,
-    technologies: [
-      { name: "Next.js", icon: SiNextdotjs },
-      { name: "TypeScript", icon: SiTypescript },
-      { name: "Tailwind", icon: SiTailwindcss },
-      { name: "Node.js", icon: SiNodedotjs },
-    ],
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-
-  {
-    id: "02",
-    title: "E-Commerce Experience",
-    category: "Frontend Development",
-    categories: ["Frontend", "Full Stack"],
-    description:
-      "A clean and conversion-focused shopping experience designed around speed, simplicity and intuitive navigation.",
-    image: "/images/projects/ecommerce.jpg",
-    technologies: [
-      { name: "React", icon: SiReact },
-      { name: "Next.js", icon: SiNextdotjs },
-      { name: "MongoDB", icon: SiMongodb },
-    ],
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-
-  {
-    id: "03",
-    title: "SaaS Dashboard",
-    category: "Frontend Development",
-    categories: ["Frontend", "Full Stack"],
-    description:
-      "A responsive dashboard interface for managing data, analytics and business operations from a single place.",
-    image: "/images/projects/dashboard.jpg",
-    technologies: [
-      { name: "React", icon: SiReact },
-      { name: "TypeScript", icon: SiTypescript },
-      { name: "Tailwind", icon: SiTailwindcss },
-    ],
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-
-  {
-    id: "04",
-    title: "Creative Portfolio",
-    category: "UI/UX Design",
-    categories: ["UI/UX Design", "Frontend"],
-    description:
-      "A minimal portfolio experience combining strong typography, subtle motion and an editorial-inspired visual system.",
-    image: "/images/projects/portfolio.jpg",
-    technologies: [
-      { name: "Figma", icon: SiFigma },
-      { name: "Next.js", icon: SiNextdotjs },
-      { name: "React", icon: SiReact },
-    ],
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-
-  {
-    id: "05",
-    title: "API & Backend System",
-    category: "Backend Development",
-    categories: ["Backend", "Full Stack"],
-    description:
-      "A scalable backend architecture with REST APIs, authentication, database integration and structured server-side logic.",
-    image: "/images/projects/backend.jpg",
-    technologies: [
-      { name: "Node.js", icon: SiNodedotjs },
-      { name: "Express.js", icon: SiExpress },
-      { name: "MongoDB", icon: SiMongodb },
-    ],
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-
-  {
-    id: "06",
-    title: "Business Landing Page",
-    category: "UI/UX Design",
-    categories: ["UI/UX Design", "Frontend"],
-    description:
-      "A conversion-focused landing page designed with clear visual hierarchy, modern interactions and responsive layouts.",
-    image: "/images/projects/landing-page.jpg",
-    technologies: [
-      { name: "Figma", icon: SiFigma },
-      { name: "React", icon: SiReact },
-      { name: "Tailwind", icon: SiTailwindcss },
-    ],
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-
-  {
-    id: "07",
-    title: "Database Management System",
-    category: "Backend Development",
-    categories: ["Backend"],
-    description:
-      "A structured data management system focused on reliable database architecture, efficient queries and scalable data handling.",
-    image: "/images/projects/database.jpg",
-    technologies: [
-      { name: "PostgreSQL", icon: SiPostgresql },
-      { name: "Node.js", icon: SiNodedotjs },
-      { name: "TypeScript", icon: SiTypescript },
-    ],
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-
-  {
-    id: "08",
-    title: "Modern Web Interface",
-    category: "Frontend Development",
-    categories: ["Frontend", "UI/UX Design"],
-    description:
-      "A polished modern interface built around reusable components, responsive behavior and subtle micro-interactions.",
-    image: "/images/projects/interface.jpg",
-    technologies: [
-      { name: "Next.js", icon: SiNextdotjs },
-      { name: "React", icon: SiReact },
-      { name: "Tailwind", icon: SiTailwindcss },
-    ],
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-];
 
 const tabs = [
   { name: "All", icon: Layers3 },
@@ -246,9 +76,9 @@ export default function Projects() {
           }}
         />
 
-        <div className="absolute left-1/2 top-[-180px] h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-white/[0.025] blur-[150px]" />
+        <div className="absolute left-1/2 -top-45 h-125 w-125 -translate-x-1/2 rounded-full bg-white/2.5 blur-[150px]" />
 
-        <div className="absolute -bottom-40 -right-40 h-[450px] w-[450px] rounded-full bg-white/[0.015] blur-[140px]" />
+        <div className="absolute -bottom-40 -right-40 h-112.5 w-112.5 rounded-full bg-white/1.5 blur-[140px]" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
@@ -289,7 +119,7 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <div className="overflow-x-auto rounded-2xl border border-white/[0.08] bg-white/[0.025] p-1.5">
+          <div className="overflow-x-auto rounded-2xl border border-white/8 bg-white/2.5 p-1.5">
             <div className="flex min-w-max gap-1">
               {tabs.map((tab) => {
                 const Icon = tab.icon;
@@ -359,23 +189,23 @@ export default function Projects() {
                   key={project.id}
                   variants={cardVariants}
                   layout
-                  className={`group relative overflow-hidden rounded-[1.6rem] border border-white/[0.08] bg-white/[0.025] transition-all duration-500 hover:-translate-y-1 hover:border-white/[0.14] hover:bg-white/[0.035] ${
+                  className={`group relative overflow-hidden rounded-[1.6rem] border border-white/8 bg-white/2.5 transition-all duration-500 hover:-translate-y-1 hover:border-white/[0.14] hover:bg-white/[0.035] ${
                     isFeatured ? "md:col-span-2 lg:col-span-3" : ""
                   }`}
                 >
                   {isFeatured ? (
                     <div className="grid lg:grid-cols-[1.35fr_0.65fr]">
                       {/* Featured Image */}
-                      <div className="group/image relative min-h-[330px] overflow-hidden bg-[#0b0b0b] sm:min-h-[430px] lg:min-h-[560px]">
+                      <div className="group/image relative min-h-82.5 overflow-hidden bg-[#0b0b0b] sm:min-h-107.5 lg:min-h-140">
                         <img
                           src={project.image}
                           alt={project.title}
                           className="absolute inset-0 h-full w-full object-cover opacity-80 transition-transform duration-1000 ease-out group-hover:scale-[1.045]"
                         />
 
-                        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+                        <div className="absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent" />
 
-                        <div className="absolute inset-y-0 right-0 hidden w-1/3 bg-gradient-to-l from-black/35 to-transparent lg:block" />
+                        <div className="absolute inset-y-0 right-0 hidden w-1/3 bg-linear-to-l from-black/35 to-transparent lg:block" />
 
                         {/* Badge */}
                         <div className="absolute left-5 top-5 flex items-center gap-2 rounded-full border border-white/10 bg-black/35 px-3.5 py-2 backdrop-blur-xl sm:left-7 sm:top-7">
@@ -429,7 +259,7 @@ export default function Projects() {
                             {project.categories.map((category) => (
                               <span
                                 key={category}
-                                className="rounded-full border border-white/[0.08] bg-white/[0.025] px-3 py-1.5 text-[9px] uppercase tracking-[0.13em] text-white/35"
+                                className="rounded-full border border-white/8 bg-white/2.5 px-3 py-1.5 text-[9px] uppercase tracking-[0.13em] text-white/35"
                               >
                                 {category}
                               </span>
@@ -449,7 +279,7 @@ export default function Projects() {
                                 return (
                                   <div
                                     key={tech.name}
-                                    className="flex items-center gap-2 rounded-xl border border-white/[0.07] bg-white/[0.025] px-3 py-2 transition-colors hover:border-white/[0.13] hover:bg-white/[0.045]"
+                                    className="flex items-center gap-2 rounded-xl border border-white/[0.07] bg-white/2.5 px-3 py-2 transition-colors hover:border-white/13 hover:bg-white/4.5"
                                   >
                                     <TechIcon className="h-3.5 w-3.5 text-white/45" />
 
@@ -480,7 +310,7 @@ export default function Projects() {
                             href={project.githubUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.025] px-5 py-3 text-xs text-white/50 transition-all duration-300 hover:border-white/20 hover:text-white"
+                            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/2.5 px-5 py-3 text-xs text-white/50 transition-all duration-300 hover:border-white/20 hover:text-white"
                           >
                             <FaGithub className="h-3.5 w-3.5" />
                             <span>Source Code</span>
@@ -491,14 +321,14 @@ export default function Projects() {
                   ) : (
                     <div className="flex h-full flex-col">
                       {/* Image */}
-                      <div className="relative aspect-[16/10] overflow-hidden bg-[#0b0b0b]">
+                      <div className="relative aspect-16/10 overflow-hidden bg-[#0b0b0b]">
                         <img
                           src={project.image}
                           alt={project.title}
                           className="absolute inset-0 h-full w-full object-cover opacity-75 transition-transform duration-700 ease-out group-hover:scale-[1.06]"
                         />
 
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent" />
+                        <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/10 to-transparent" />
 
                         {/* Top metadata */}
                         <div className="absolute left-5 right-5 top-5 flex items-center justify-between">
@@ -555,7 +385,7 @@ export default function Projects() {
                                 <div
                                   key={tech.name}
                                   title={tech.name}
-                                  className="flex items-center gap-1.5 rounded-lg border border-white/[0.06] bg-white/[0.015] px-2.5 py-1.5 transition-all duration-300 group-hover:border-white/[0.08]"
+                                  className="flex items-center gap-1.5 rounded-lg border border-white/6 bg-white/1.5 px-2.5 py-1.5 transition-all duration-300 group-hover:border-white/8"
                                 >
                                   <TechIcon className="h-3 w-3 text-white/35" />
 
@@ -569,7 +399,7 @@ export default function Projects() {
                         </div>
 
                         {/* Footer */}
-                        <div className="mt-7 flex items-center justify-between border-t border-white/[0.06] pt-5">
+                        <div className="mt-7 flex items-center justify-between border-t border-white/6 pt-5">
                           <a
                             href={project.liveUrl}
                             target="_blank"
@@ -605,7 +435,7 @@ export default function Projects() {
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            className="rounded-[1.6rem] border border-white/[0.08] bg-white/[0.02] py-20 text-center"
+            className="rounded-[1.6rem] border border-white/8 bg-white/2 py-20 text-center"
           >
             <p className="text-sm text-white/35">
               No projects found in this category yet.

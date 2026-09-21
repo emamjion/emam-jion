@@ -35,7 +35,6 @@ export default function Contact() {
       id="contact"
       className="relative overflow-hidden bg-[#050505] py-24 text-white md:py-32"
     >
-      {/* Background Grid */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.025]"
         style={{

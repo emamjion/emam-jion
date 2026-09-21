@@ -12,8 +12,7 @@ import {
   Smartphone,
 } from "lucide-react";
 
-
-
+import { Experience, Project } from "@/types";
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa6";
 import {
   SiMongodb,
@@ -22,8 +21,10 @@ import {
   SiReact,
   SiTailwindcss,
   SiTypescript,
+  SiExpress,
+  SiFigma,
+  SiPostgresql
 } from "react-icons/si";
-import { Experience } from "@/types";
 
 export const services = [
   {
@@ -287,5 +288,182 @@ export const experiences: Experience[] = [
         icon: SiTailwindcss,
       },
     ],
+  },
+];
+
+export const heroSocialLinks = [
+  {
+    label: "GitHub",
+    href: "https://github.com",
+    icon: FaGithub,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://linkedin.com",
+    icon: FaLinkedin,
+  },
+  {
+    label: "Email",
+    href: "mailto:hello@example.com",
+    icon: Mail,
+  },
+];
+
+export const heroTechStack = [
+  {
+    name: "Next.js",
+    icon: SiNextdotjs,
+  },
+  {
+    name: "React",
+    icon: SiReact,
+  },
+  {
+    name: "TypeScript",
+    icon: SiTypescript,
+  },
+  {
+    name: "Node.js",
+    icon: SiNodedotjs,
+  },
+];
+
+export const projects: Project[] = [
+  {
+    id: "01",
+    title: "Real Estate Platform",
+    category: "Full Stack Web Application",
+    categories: ["Full Stack", "Frontend", "Backend"],
+    description:
+      "A modern real estate platform with property discovery, advanced filtering, detailed property pages and a smooth user experience.",
+    image: "/images/projects/real-estate.jpg",
+    featured: true,
+    technologies: [
+      { name: "Next.js", icon: SiNextdotjs },
+      { name: "TypeScript", icon: SiTypescript },
+      { name: "Tailwind", icon: SiTailwindcss },
+      { name: "Node.js", icon: SiNodedotjs },
+    ],
+    liveUrl: "#",
+    githubUrl: "#",
+  },
+
+  {
+    id: "02",
+    title: "E-Commerce Experience",
+    category: "Frontend Development",
+    categories: ["Frontend", "Full Stack"],
+    description:
+      "A clean and conversion-focused shopping experience designed around speed, simplicity and intuitive navigation.",
+    image: "/images/projects/ecommerce.jpg",
+    technologies: [
+      { name: "React", icon: SiReact },
+      { name: "Next.js", icon: SiNextdotjs },
+      { name: "MongoDB", icon: SiMongodb },
+    ],
+    liveUrl: "#",
+    githubUrl: "#",
+  },
+
+  {
+    id: "03",
+    title: "SaaS Dashboard",
+    category: "Frontend Development",
+    categories: ["Frontend", "Full Stack"],
+    description:
+      "A responsive dashboard interface for managing data, analytics and business operations from a single place.",
+    image: "/images/projects/dashboard.jpg",
+    technologies: [
+      { name: "React", icon: SiReact },
+      { name: "TypeScript", icon: SiTypescript },
+      { name: "Tailwind", icon: SiTailwindcss },
+    ],
+    liveUrl: "#",
+    githubUrl: "#",
+  },
+
+  {
+    id: "04",
+    title: "Creative Portfolio",
+    category: "UI/UX Design",
+    categories: ["UI/UX Design", "Frontend"],
+    description:
+      "A minimal portfolio experience combining strong typography, subtle motion and an editorial-inspired visual system.",
+    image: "/images/projects/portfolio.jpg",
+    technologies: [
+      { name: "Figma", icon: SiFigma },
+      { name: "Next.js", icon: SiNextdotjs },
+      { name: "React", icon: SiReact },
+    ],
+    liveUrl: "#",
+    githubUrl: "#",
+  },
+
+  {
+    id: "05",
+    title: "API & Backend System",
+    category: "Backend Development",
+    categories: ["Backend", "Full Stack"],
+    description:
+      "A scalable backend architecture with REST APIs, authentication, database integration and structured server-side logic.",
+    image: "/images/projects/backend.jpg",
+    technologies: [
+      { name: "Node.js", icon: SiNodedotjs },
+      { name: "Express.js", icon: SiExpress },
+      { name: "MongoDB", icon: SiMongodb },
+    ],
+    liveUrl: "#",
+    githubUrl: "#",
+  },
+
+  {
+    id: "06",
+    title: "Business Landing Page",
+    category: "UI/UX Design",
+    categories: ["UI/UX Design", "Frontend"],
+    description:
+      "A conversion-focused landing page designed with clear visual hierarchy, modern interactions and responsive layouts.",
+    image: "/images/projects/landing-page.jpg",
+    technologies: [
+      { name: "Figma", icon: SiFigma },
+      { name: "React", icon: SiReact },
+      { name: "Tailwind", icon: SiTailwindcss },
+    ],
+    liveUrl: "#",
+    githubUrl: "#",
+  },
+
+  {
+    id: "07",
+    title: "Database Management System",
+    category: "Backend Development",
+    categories: ["Backend"],
+    description:
+      "A structured data management system focused on reliable database architecture, efficient queries and scalable data handling.",
+    image: "/images/projects/database.jpg",
+    technologies: [
+      { name: "PostgreSQL", icon: SiPostgresql },
+      { name: "Node.js", icon: SiNodedotjs },
+      { name: "TypeScript", icon: SiTypescript },
+    ],
+    liveUrl: "#",
+    githubUrl: "#",
+  },
+
+  {
+    id: "08",
+    title: "Modern Web Interface",
+    category: "Frontend Development",
+    categories: ["Frontend", "UI/UX Design"],
+    description:
+      "A polished modern interface built around reusable components, responsive behavior and subtle micro-interactions.",
+    image: "/images/projects/interface.jpg",
+    technologies: [
+      { name: "Next.js", icon: SiNextdotjs },
+      { name: "React", icon: SiReact },
+      { name: "Tailwind", icon: SiTailwindcss },
+    ],
+    liveUrl: "#",
+    githubUrl: "#",
   },
 ];

@@ -208,7 +208,6 @@ export function ExperienceCard({
           </div>
         </motion.div>
 
-        {/* Bottom edge */}
         <div className="pointer-events-none absolute bottom-0 left-8 right-8 h-px bg-linear-to-r from-transparent via-white/10 to-transparent" />
       </motion.article>
     </div>

@@ -1,16 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowDown, ArrowUpRight, Mail } from "lucide-react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import {
-  SiNextdotjs,
-  SiNodedotjs,
-  SiReact,
-  SiTypescript,
-} from "react-icons/si";
+import { heroSocialLinks, heroTechStack } from "@/data";
+import { motion, Variants } from "framer-motion";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { SiNextdotjs, SiTypescript } from "react-icons/si";
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: {},
   visible: {
     transition: {
@@ -19,7 +14,7 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: {
     opacity: 0,
     y: 25,
@@ -33,43 +28,6 @@ const itemVariants = {
     },
   },
 };
-
-const socialLinks = [
-  {
-    label: "GitHub",
-    href: "https://github.com",
-    icon: FaGithub,
-  },
-  {
-    label: "LinkedIn",
-    href: "https://linkedin.com",
-    icon: FaLinkedin,
-  },
-  {
-    label: "Email",
-    href: "mailto:hello@example.com",
-    icon: Mail,
-  },
-];
-
-const techStack = [
-  {
-    name: "Next.js",
-    icon: SiNextdotjs,
-  },
-  {
-    name: "React",
-    icon: SiReact,
-  },
-  {
-    name: "TypeScript",
-    icon: SiTypescript,
-  },
-  {
-    name: "Node.js",
-    icon: SiNodedotjs,
-  },
-];
 
 export default function Hero() {
   const scrollToProjects = () => {
@@ -107,17 +65,10 @@ export default function Hero() {
       id="home"
       className="relative flex min-h-screen items-center overflow-hidden bg-[#050505] pt-28"
     >
-      {/* =====================================================
-          BACKGROUND
-      ====================================================== */}
+      <div className="pointer-events-none absolute left-1/2 top-1/3 h-125 w-125 -translate-x-1/2 rounded-full bg-white/[0.035] blur-[140px]" />
 
-      {/* Main glow */}
-      <div className="pointer-events-none absolute left-1/2 top-1/3 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-white/[0.035] blur-[140px]" />
+      <div className="pointer-events-none absolute -right-40 -top-40 h-125 w-125 rounded-full bg-white/2.5 blur-[120px]" />
 
-      {/* Top glow */}
-      <div className="pointer-events-none absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-white/[0.025] blur-[120px]" />
-
-      {/* Grid */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.035]"
         style={{
@@ -129,7 +80,6 @@ export default function Hero() {
         }}
       />
 
-      {/* Radial fade */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
@@ -138,16 +88,8 @@ export default function Hero() {
         }}
       />
 
-      {/* =====================================================
-          CONTENT
-      ====================================================== */}
-
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-20 lg:px-8 lg:py-24">
         <div className="grid items-center gap-16 lg:grid-cols-[1.25fr_0.75fr] lg:gap-20">
-          {/* =================================================
-              LEFT CONTENT
-          ================================================== */}
-
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -216,7 +158,7 @@ export default function Hero() {
               <button
                 type="button"
                 onClick={scrollToContact}
-                className="group flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-6 py-3.5 text-sm font-medium text-white/70 backdrop-blur-xl transition-all duration-300 hover:border-white/20 hover:bg-white/[0.07] hover:text-white"
+                className="group flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/3 px-6 py-3.5 text-sm font-medium text-white/70 backdrop-blur-xl transition-all duration-300 hover:border-white/20 hover:bg-white/[0.07] hover:text-white"
               >
                 Let&apos;s talk
                 <ArrowUpRight
@@ -235,7 +177,7 @@ export default function Hero() {
                 Connect
               </span>
 
-              {socialLinks.map((social) => {
+              {heroSocialLinks.map((social) => {
                 const Icon = social.icon;
 
                 return (
@@ -251,7 +193,7 @@ export default function Hero() {
                         : undefined
                     }
                     aria-label={social.label}
-                    className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.025] text-white/40 transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white hover:text-black"
+                    className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/2.5 text-white/40 transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white hover:text-black"
                   >
                     <Icon size={15} />
                   </a>
@@ -259,10 +201,6 @@ export default function Hero() {
               })}
             </motion.div>
           </motion.div>
-
-          {/* =================================================
-              RIGHT VISUAL
-          ================================================== */}
 
           <motion.div
             initial={{
@@ -280,7 +218,7 @@ export default function Hero() {
               delay: 0.35,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className="relative mx-auto hidden w-full max-w-[440px] lg:block"
+            className="relative mx-auto hidden w-full max-w-110 lg:block"
           >
             {/* Outer rotating ring */}
             <motion.div
@@ -296,7 +234,7 @@ export default function Hero() {
             />
 
             {/* Inner ring */}
-            <div className="absolute -inset-4 rounded-full border border-white/[0.06]" />
+            <div className="absolute -inset-4 rounded-full border border-white/6" />
 
             {/* Main card */}
             <motion.div
@@ -308,19 +246,19 @@ export default function Hero() {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="relative aspect-square overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/[0.08] via-white/[0.025] to-transparent p-3 shadow-2xl shadow-black/50"
+              className="relative aspect-square overflow-hidden rounded-4xl border border-white/10 bg-linear-to-br from-white/8 via-white/2.5 to-transparent p-3 shadow-2xl shadow-black/50"
             >
               {/* Card inner */}
-              <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-[1.5rem] border border-white/[0.07] bg-[#090909]">
+              <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-3xl border border-white/[0.07] bg-[#090909]">
                 {/* Center glow */}
                 <div className="absolute h-56 w-56 rounded-full bg-white/[0.035] blur-[80px]" />
 
                 {/* Decorative circles */}
-                <div className="absolute h-64 w-64 rounded-full border border-white/[0.06]" />
+                <div className="absolute h-64 w-64 rounded-full border border-white/6" />
 
-                <div className="absolute h-44 w-44 rounded-full border border-white/[0.06]" />
+                <div className="absolute h-44 w-44 rounded-full border border-white/6" />
 
-                <div className="absolute h-24 w-24 rounded-full border border-white/[0.08]" />
+                <div className="absolute h-24 w-24 rounded-full border border-white/8" />
 
                 {/* Center */}
                 <div className="relative z-10 text-center">
@@ -393,14 +331,14 @@ export default function Hero() {
 
             {/* Tech stack */}
             <div className="absolute -bottom-10 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-2xl border border-white/10 bg-black/80 p-2 shadow-2xl backdrop-blur-2xl">
-              {techStack.map((tech) => {
+              {heroTechStack.map((tech) => {
                 const Icon = tech.icon;
 
                 return (
                   <div
                     key={tech.name}
                     title={tech.name}
-                    className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/[0.04] text-white/40 transition-all duration-300 hover:bg-white/[0.08] hover:text-white"
+                    className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/4 text-white/40 transition-all duration-300 hover:bg-white/8 hover:text-white"
                   >
                     <Icon size={17} />
                   </div>
@@ -409,10 +347,6 @@ export default function Hero() {
             </div>
           </motion.div>
         </div>
-
-        {/* =================================================
-            BOTTOM INFO
-        ================================================== */}
 
         <motion.div
           initial={{
@@ -457,7 +391,7 @@ export default function Hero() {
             className="group flex items-center gap-3 text-[10px] uppercase tracking-[0.25em] text-white/25 transition-colors hover:text-white/60"
           >
             Scroll to explore
-            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 transition-all duration-300 group-hover:border-white/20 group-hover:bg-white/[0.05]">
+            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 transition-all duration-300 group-hover:border-white/20 group-hover:bg-white/5">
               <ArrowDown size={13} className="animate-bounce" />
             </span>
           </button>

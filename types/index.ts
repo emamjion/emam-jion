@@ -15,3 +15,27 @@ export type Experience = {
   }[];
   current?: boolean;
 };
+
+export type ProjectCategory =
+  | "Frontend"
+  | "Backend"
+  | "Full Stack"
+  | "UI/UX Design";
+
+export type Technology = {
+  name: string;
+  icon: React.ElementType;
+};
+
+export type Project = {
+  id: string;
+  title: string;
+  category: string;
+  categories: ProjectCategory[];
+  description: string;
+  image: string;
+  featured?: boolean;
+  technologies: Technology[];
+  liveUrl: string;
+  githubUrl: string;
+};
