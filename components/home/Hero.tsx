@@ -116,7 +116,7 @@ export default function Hero() {
               variants={itemVariants}
               className="mb-5 text-sm font-medium uppercase tracking-[0.3em] text-white/35"
             >
-              Hello, I&apos;m Your Name
+              Hello, I&apos;m Emam Khalid Jion
             </motion.p>
 
             {/* Main Heading */}
@@ -147,7 +147,7 @@ export default function Hero() {
               <button
                 type="button"
                 onClick={scrollToProjects}
-                className="group flex items-center justify-center gap-3 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-black transition-all duration-300 hover:bg-neutral-200"
+                className="group flex items-center justify-center gap-3 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-black transition-all duration-300 hover:bg-neutral-200 cursor-pointer"
               >
                 View my work
                 <span className="flex h-7 w-7 items-center justify-center rounded-full bg-black text-white transition-transform duration-300 group-hover:rotate-45">
@@ -158,7 +158,7 @@ export default function Hero() {
               <button
                 type="button"
                 onClick={scrollToContact}
-                className="group flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/3 px-6 py-3.5 text-sm font-medium text-white/70 backdrop-blur-xl transition-all duration-300 hover:border-white/20 hover:bg-white/[0.07] hover:text-white"
+                className="group flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/3 px-6 py-3.5 text-sm font-medium text-white/70 backdrop-blur-xl cursor-pointer transition-all duration-300 hover:border-white/20 hover:bg-white/[0.07] hover:text-white"
               >
                 Let&apos;s talk
                 <ArrowUpRight
@@ -263,7 +263,7 @@ export default function Hero() {
                 {/* Center */}
                 <div className="relative z-10 text-center">
                   <p className="text-5xl font-bold tracking-[-0.06em] text-white">
-                    FD
+                    EJ
                   </p>
 
                   <div className="mx-auto mt-3 h-px w-10 bg-white/20" />
