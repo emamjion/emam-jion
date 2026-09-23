@@ -80,10 +80,35 @@ export default function Navbar() {
     });
   };
 
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
+  const [themeAnimating, setThemeAnimating] = useState(false);
+  const [origin, setOrigin] = useState({
+    x: 0,
+    y: 0,
+  });
 
+  const toggleTheme = (event: React.MouseEvent<HTMLButtonElement>) => {
+    if (themeAnimating) return;
+
+    const rect = event.currentTarget.getBoundingClientRect();
+
+    setOrigin({
+      x: rect.left + rect.width / 2,
+      y: rect.top + rect.height / 2,
+    });
+
+    setThemeAnimating(true);
+
+    const nextTheme = theme === "dark" ? "light" : "dark";
+
+    // Small delay so the reveal starts naturally
+    setTimeout(() => {
+      setTheme(nextTheme);
+    }, 80);
+
+    setTimeout(() => {
+      setThemeAnimating(false);
+    }, 700);
+  };
   return (
     <>
       <motion.header
@@ -221,7 +246,7 @@ export default function Navbar() {
                       }}
                       className="
                         absolute inset-0 rounded-xl
-                        bg-black/[0.05]
+                        bg-black/5
 
                         dark:bg-white/[0.07]
                       "
@@ -268,22 +293,21 @@ export default function Navbar() {
                 onClick={toggleTheme}
                 aria-label="Toggle theme"
                 className="
-                  relative flex h-10 w-10
-                  items-center justify-center
-                  overflow-hidden rounded-xl
-                  border
-                  border-black/10
-                  bg-black/[0.04]
-                  text-black/70
-                  transition-all duration-300
+      relative z-50 flex h-10 w-10
+      items-center justify-center
+      overflow-hidden rounded-xl
+      border
+      border-black/10
+      bg-black/[0.04]
+      text-black/70
+      transition-all duration-300
+      hover:bg-black/[0.08]
 
-                  hover:bg-black/[0.08]
-
-                  dark:border-white/10
-                  dark:bg-white/[0.05]
-                  dark:text-white/70
-                  dark:hover:bg-white/[0.1]
-                "
+      dark:border-white/10
+      dark:bg-white/[0.05]
+      dark:text-white/70
+      dark:hover:bg-white/[0.1]
+    "
               >
                 <AnimatePresence mode="wait" initial={false}>
                   {theme === "dark" ? (
@@ -644,6 +668,32 @@ export default function Navbar() {
                 </button>
               </nav>
             </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* =========================
+    THEME TRANSITION
+========================= */}
+
+        <AnimatePresence>
+          {themeAnimating && (
+            <motion.div
+              key="theme-transition"
+              className="pointer-events-none fixed inset-0 z-[9999]"
+              initial={{
+                clipPath: `circle(0px at ${origin.x}px ${origin.y}px)`,
+              }}
+              animate={{
+                clipPath: `circle(150vmax at ${origin.x}px ${origin.y}px)`,
+              }}
+              transition={{
+                duration: 0.65,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              style={{
+                backgroundColor: theme === "dark" ? "#ffffff" : "#050505",
+              }}
+            />
           )}
         </AnimatePresence>
       </motion.header>
